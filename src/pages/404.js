@@ -18,7 +18,7 @@ export default function NotFound() {
       <h1>404</h1>
       <h2>Sorry, looks like this page cannot be found</h2>
       <p>
-        Redirecting you to the <Link href="/">Homepage</Link>
+        Redirecting you to the <Link href="/" legacyBehavior>Homepage</Link>
       </p>
       <style jsx>
         {`

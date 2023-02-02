@@ -24,7 +24,7 @@ export default function ArticleCard({ article }) {
         </div>
         <div className="actions">
           <Link href={"/article/" + slug}>
-            <a>Read more...</a>
+            Read more...
           </Link>
         </div>
       </div>

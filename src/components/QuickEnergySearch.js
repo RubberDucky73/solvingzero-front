@@ -1,13 +1,12 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
-import { db } from "../firebase/config";
-import { collection, getDocs } from "firebase/firestore";
+import React, { useState } from "react";
+import Link from 'next/link'
 import jsonData from "../data/energyCompanies.json";
 import "antd/dist/antd.css";
 import { Form, Select, Button, Input } from "antd";
-import BestPlans from "../components/BestPlans";
-import Link from 'next/link'
+import styles from "../styles/QuickEnergySearch.module.css"
+
 
 const { Option } = Select;
 const companies = jsonData.companies;
@@ -29,21 +28,9 @@ export default function App() {
     setCallApi(false)
   }
 
-  // useEffect(() => {
-  //   const ref = collection(db, "first-filter");
-  //   let results = [];
-  //   getDocs(ref).then((snapshot) => {
-  //     snapshot.docs.forEach((doc) => {
-  //       results.push({ id: doc.id });
-  //     });
-  //     setRetailers(results);
-  //   });
-  // }, []);
-
-  return (
-    <>
-      <Form>
-        <Form.Item name="companies">
+  return <>
+      <Form className={styles.form}>
+        <Form.Item name="companies" >
           <Select
             onChange={(id) => {
               setName(id);
@@ -80,15 +67,14 @@ export default function App() {
               pathname: '/compare-plans',
               query: { zipcode: postcode },
             }}
-          >
-            <Button type="primary" htmlType="submit" onClick={handleSubmit}>
+            legacyBehavior>
+            <Button type="primary" htmlType="submit" onClick={handleSubmit} >
               Sumbit
             </Button>
           </Link>
         </Form.Item>
 
       </Form>
-      {/* <BestPlans callApi={callApi} postcode={postcode} /> */}
-    </>
-  );
+
+  </>;
 }

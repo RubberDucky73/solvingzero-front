@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Quicksand:wght@400;500;600;700&display=swap');
 
 body {
   background: #ffff;
@@ -14,7 +14,7 @@ a {
   margin: 0 auto;
 }
 nav {
-  margin: 10px auto 80px;
+  margin: 10px auto 0px;
   padding: 10px 0;
   display: flex;
   justify-content: flex-end;
